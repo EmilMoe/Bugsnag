@@ -3,6 +3,7 @@
 namespace EmilMoe\Bugsnag;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Config;
 
 class BugsnagServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,12 @@ class BugsnagServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfig(config('logging.channels'), ['bugsnag' => ['driver' => 'bugsnag']]);
+        Config::set(
+            'logging.channels',
+            array_merge(
+                config('logging.channels'),
+                ['bugsnag' => ['driver' => 'bugsnag']]
+            )
+        );
     }
 }
