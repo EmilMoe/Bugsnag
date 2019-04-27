@@ -25,6 +25,14 @@ class BugsnagServiceProvider extends ServiceProvider
     public function register()
     {
         Config::set(
+            'logging.channels.stack.channels',
+            array_merge(
+                config('logging.channels.stack.channels'),
+                ['bugsnag']
+            )
+        );
+
+        Config::set(
             'logging.channels',
             array_merge(
                 config('logging.channels'),
