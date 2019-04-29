@@ -15,12 +15,8 @@
         "illuminate/support": "^5.0",
         "php": ">=5.5",
         "bugsnag/bugsnag-laravel": "^2.0",
-        "bugsnag/bugsnag-js": "^6.0",
-        "oomphinc/composer-installer-extender": "^1.0"
+        "bugsnag/bugsnag-js": "^6.0"
     },
-    "repositories": [
-        {"type": "vcs", "url": "git@github.com:bugsnag/bugsnag-js.git"}
-    ],
     "autoload": {
         "psr-4": {
             "EmilMoe\\Bugsnag\\": "src/"
@@ -40,10 +36,6 @@
                 "EmilMoe\\Bugsnag\\BugsnagServiceProvider",
                 "Bugsnag\\BugsnagLaravel\\BugsnagServiceProvider"
             ]
-        },
-        "installer-types": ["npm-package"],
-        "installer-paths": {
-            "docroot/node_modules/{$name}": ["type:npm-package"]
         }
     }
 }
